@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { validateEmail } from '../utils/validation';
 import './Login.css';
 
 /**
@@ -20,16 +21,6 @@ function Login() {
   
   // State for success message
   const [successMessage, setSuccessMessage] = useState('');
-
-  /**
-   * Validates email format
-   * @param {string} email - Email address to validate
-   * @returns {boolean} - True if valid, false otherwise
-   */
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   /**
    * Validates the entire form
@@ -91,7 +82,7 @@ function Login() {
       setErrors({});
       
       // In a real application, you would make an API call here
-      console.log('Login attempt with:', formData);
+      // API call would be made here to authenticate the user
       
       // Clear form after successful submission
       setTimeout(() => {

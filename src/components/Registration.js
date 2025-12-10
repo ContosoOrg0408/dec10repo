@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { validateEmail } from '../utils/validation';
 import './Registration.css';
 
 /**
@@ -22,16 +23,6 @@ function Registration() {
   
   // State for success message
   const [successMessage, setSuccessMessage] = useState('');
-
-  /**
-   * Validates email format
-   * @param {string} email - Email address to validate
-   * @returns {boolean} - True if valid, false otherwise
-   */
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   /**
    * Validates the entire form
@@ -107,10 +98,7 @@ function Registration() {
       setErrors({});
       
       // In a real application, you would make an API call here
-      console.log('Registration attempt with:', {
-        name: formData.name,
-        email: formData.email
-      });
+      // API call would be made here to register the user
       
       // Redirect to login after 2 seconds
       setTimeout(() => {
