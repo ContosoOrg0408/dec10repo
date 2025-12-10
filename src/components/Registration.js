@@ -97,8 +97,7 @@ function Registration() {
       setSuccessMessage('Registration successful! Redirecting to login...');
       setErrors({});
       
-      // In a real application, you would make an API call here
-      // API call would be made here to register the user
+      // In a real application, you would make an API call here to register the user
       
       // Redirect to login after 2 seconds
       setTimeout(() => {
